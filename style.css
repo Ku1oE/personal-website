@@ -58,6 +58,7 @@ a {
 .nav-btn {
     color: #131313;
     padding: 2px 15px;
+    line-height: 1;
     border-radius: 8px;
     text-decoration: none;
     font-size: 28px;
