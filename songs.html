@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="songs.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="songs.css">
 </head>
 <body>
     <header>
@@ -27,43 +27,43 @@
 
     <main>
         <section class="hero-container">
-            <div class="hero-bg" style="background-image: url('photos/akiprofile.jpg');"></div>
+            <div class="hero-bg"></div>
             
             <div class="hero-overlay-content">
                 <h2 class="hero-title">Song lists</h2>
                 <p class="hero-subtitle">カラオケでリクエストしたいかもって時にお使いください</p>
                 
-                <div class="search-box">
-                    <img src="icons/filter-icon.png" alt="Filter Icon" class="filter-icon">
+                <form class="search-box">
+                    <button class="filter-button" type="button">
+                        <img src="icons/filter-icon.png" alt="Filter Icon" class ="filter-icon">
+                    </button>
+                    <!-- TODO: Make it so that when we click the Filter Icon, it opens the filter options. It should be a modal window with things user can check one or more tags-->
                     <input type="text" placeholder="曲名やアーティスト名で検索" aria-label="Search songs" class="search-input">
-                    <img src="icons/search-icon.png" alt="Search Icon" class="search-icon">
-                </div>
+                    <button class="search-button" type="submit">
+                        <img src="icons/search-icon.png" alt="Search Icon" class="search-icon">
+                    </button>
+                    <!-- TODO: Implement search functionality -->
+                </form>
             </div>
         </section>
 
         <section class="songs-section">
-            <div class="songs-wrapper">
-                <div class="song-row">
+            <div class="songs-list">
+
+                <div class="song-item">
                     <div class="song-info">
-                        <h3 class="song-title-text">Song Name</h3>
-                        <p class="song-meta">Artist Names</p>
-                        <p class="song-meta">Tags</p>
-                    </div>
+                        <h3 class="song-title">Song Name</h3>
+                        <p class="song-artist">Artist Names</p>
+
+                        <div class="song-tags">
+                            <span class="tag">Japanese</span>
+                            <span class="tag">J-Pop</span>
+                            <span class="tag">Ballad</span>
+                        </div>
+                    </div> 
                 </div>
-                <div class="song-row">
-                    <div class="song-info">
-                        <h3 class="song-title-text">Song Name</h3>
-                        <p class="song-meta">Artist Names</p>
-                        <p class="song-meta">Tags</p>
-                    </div>
-                </div>
-                <div class="song-row">
-                    <div class="song-info">
-                        <h3 class="song-title-text">Song Name</h3>
-                        <p class="song-meta">Artist Names</p>
-                        <p class="song-meta">Tags</p>
-                    </div>
-                </div>
+                
+                      
             </div>
         </section>
     </main>

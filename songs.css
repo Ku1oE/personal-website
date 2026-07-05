@@ -19,6 +19,7 @@
 
 /* Full Bleed Image Backing Layer */
 .hero-bg {
+    background-image: url("photos/akiprofile.JPG");
     position: absolute;
     top: 0;
     left: 0;
@@ -84,6 +85,7 @@
     width: 20px;
     height: 20px;
     margin-left: 10px;
+    border: none;
 }
 
 .search-input {
@@ -93,10 +95,16 @@
     color: #333333;
 }
 
+form > button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .search-icon {
     width: 60px;
     height: 60px;
-    margin-left: 10px;
+    border: none;
 }
 
 /* --- Clean List Architecture --- */
@@ -105,35 +113,42 @@
     background-color: #ffffff;
 }
 
-.songs-wrapper {
-    max-width: 700px; /* Aligns elements into a sleek single column group layout */
+.songs-list {
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.song-row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.song-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
 }
 
-.song-status-icon svg {
-    width: 22px;
-    height: 22px;
-    fill: #555555;
-    display: block;
+.song-artist {
+    font-size: 14px;
 }
 
-.song-title-text {
+.song-title {
     font-size: 18px;
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 2px;
 }
 
-.song-meta {
+.song-tags {
+    font-family: inherit;
+    gap: 6px;
+    display: flex;
     font-size: 14px;
     color: #707070;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    font-size: 11px;
 }
