@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #131313;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header / Navigation --- */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-list a {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* --- Hero Banner Section --- */
+.banner-container {
+    width: 100%;
+    background-color: #cccccc; /* Fallback frame color */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- CTA Button Layout --- */
+.cta-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 60px 0;
+}
+
+.cta-button {
+    background-color: #be7554; 
+    color: #ffffff;
+    padding: 24px 60px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    min-width: 280px;
+    transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #a86343;
+}
+
+/* --- Content Typography & Layout --- */
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 40px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: lowercase; 
+}
+
+.about-details p {
+    font-size: 15px;
+    color: #4a4a4a;
+    margin-bottom: 8px;
+}
+
+.about-details strong {
+    color: #131313;
+    font-weight: 500;
+}
+
+/* --- Card Grid Component (Life & SNS) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Standard square aspect ratio matching the mockup images */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.card-subheading {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #131313;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #7a7a7a;
+    line-height: 1.4;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide top list links on mobile mockups */
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr; /* Stacks column cards layout on smaller viewports */
+        gap: 40px;
+    }
+}
+
+/* --- SNS Card Adjustments --- */
+.sns-card {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Slight lift animation on hovering anywhere on the card */
+.sns-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Icon Wrapper: Inherits the aspect-ratio (1/1 square) from .card-img */
+.sns-icon-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SVG sizing control inside the wrapper */
+.sns-svg {
+    width: 35%;
+    height: 35%;
+}
+
+/* --- Social Media Brand Colors --- */
+.x-bg {
+    background-color: #1a1a1a; /* Sleek black */
+    fill: #ffffff;
+}
+
+.instagram-bg {
+    /* Soft pastel gradient matching the clean aesthetic */
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    fill: #ffffff;
+}
+
+.youtube-bg {
+    background-color: #ff0000; /* YouTube Red */
+    fill: #ffffff;
+}
+
+
+/* Container override since the SVG path provides its own background box */
+.spoon-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Box background color handled inside SVG */
+    overflow: hidden;
+}
+
+/* Force your custom 512x512 icon file to fit the layout grid cleanly */
+.spoon-raw-svg {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* Dynamically color the base background path of your file to the proper orange */
+.spoon-bg-path {
+    fill: #ff5a00;
+}
+/* Color the custom text letters orange so they stand out against the white blob */
+.spoon-text-path {
+    fill: #ff5a00;
+}

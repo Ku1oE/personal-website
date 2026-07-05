@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aki's Living room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <h1 class="logo"><a href="index.html">Aki's Living room</a></h1>
+            
+            <ul class="nav-list">
+                <li><a href="#about-me">About me</a></li>
+                <li><a href="#sns">SNS</a></li>
+                <li><a href="#others">Others</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner-container">
+            <img src="photos/akiprofile.jpg" alt="Aki illustration playing guitar" class="banner-img">
+        </section>
+
+        <section class="cta-container">
+            <a href="song.html" class="cta-button">リクエストできる曲を見る</a>
+        </section>
+
+        <section id="about-me" class="content-section">
+            <h2 class="section-title">about me</h2>
+            <div class="about-details">
+                <p><strong>Age:</strong> 20+</p>
+                <p><strong>Occupation:</strong> Student</p>
+                <p><strong>Language:</strong> Japanese, English, Tagalog</p>
+                <p><strong>Hobby:</strong> Singing and Playing Guitar</p>
+            </div>
+        </section>
+
+        <section id="life" class="content-section">
+            <h2 class="section-title">recent photos</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="photos/aki-sideprofile.JPG" alt="Fruit and wine on table" class="card-img">
+                    <h3 class="card-subheading">2026.03.22</h3>
+                    <p class="card-text">誕生日、鎌倉行った時のお写真。マスクのおかげでいい感じの横顔になってます。</p>
+                </div>
+                <div class="card">
+                    <img src="photos/autumn.jpg" alt="Apricots on white cloth" class="card-img">
+                    <h3 class="card-subheading">2025.11.13</h3>
+                    <p class="card-text">秋は当たり前に秋の紅葉が大好きです。どれだけ忙しくても行きます。</p>
+                </div>
+                <div class="card">
+                    <img src="photos/filmcamera.JPG" alt="Melon and wine glass" class="card-img">
+                    <h3 class="card-subheading">2026.03.06</h3>
+                    <p class="card-text">初めて写るんですを使った時の写真。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sns" class="content-section">
+            <h2 class="section-title">sns</h2>
+            <div class="card-grid">
+                
+                <!-- X (Twitter) -->
+                <a href="https://x.com" target="_blank" class="card sns-card">
+                    <div class="sns-icon-wrapper x-bg">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="sns-svg">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="card-subheading">X (Twitter)</h3>
+                    <p class="card-text">Follow my account for quick updates, thoughts, and daily life shares.</p>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com" target="_blank" class="card sns-card">
+                    <div class="sns-icon-wrapper instagram-bg">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="sns-svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="card-subheading">Instagram</h3>
+                    <p class="card-text">Check out my aesthetic photos, stories, and visual snippets of life.</p>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com" target="_blank" class="card sns-card">
+                    <div class="sns-icon-wrapper youtube-bg">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="sns-svg">
+                            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="card-subheading">YouTube</h3>
+                    <p class="card-text">Subscribe to see full video updates, song covers, and guitar sessions.</p>
+                </a>
+
+                <!-- Spoon Radio (Fixed & Formatted) -->
+                <a href="https://www.spooncast.net" target="_blank" class="card sns-card">
+                    <div class="sns-icon-wrapper spoon-container">
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" 
+                            class="sns-svg spoon-raw-svg">
+                            <!-- Group base fill remains white for the blob -->
+                            <!-- LLM used here-->
+                            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+                                <!-- Paths for the Spoon Radio logo -->
+                                <path class="spoon-bg-path" d="M0 2560 l0 -2560 2560 0 2560 0 0 2560 0 2560 -2560 0 -2560 0 0 -2560z m3660 1271 c248 -63 439 -165 611 -329 196 -186 318 -399 384 -672 26 -104 31 -365 11 -485 -89 -522 -468 -928 -991 -1061 -137 -35 -385 -44 -531 -20 -202 35 -373 107 -633 271 -214 134 -307 168 -504 186 -132 12 -288 5 -480 -22 -75 -10 -164 -19 -196 -19 -139 0 -325 53 -458 131 -82 48 -240 208 -293 297 -24 41 -59 119 -78 175 -31 91 -36 116 -40 233 -9 255 63 453 226 626 159 168 331 254 559 280 90 11 121 9 270 -10 231 -30 358 -36 493 -23 205 19 279 48 534 205 192 118 272 158 399 201 163 55 237 64 447 61 147 -3 202 -8 270 -25z"/>
+                                <path class="spoon-text-path" d="M1193 2989 c-116 -35 -181 -141 -153 -251 20 -76 72 -121 201 -170 84 -32 139 -72 139 -103 0 -38 -29 -72 -70 -83 -22 -5 -48 -8 -58 -7 -9 2 -29 6 -44 9 -14 3 -48 24 -76 45 l-49 39 -52 -52 -53 -53 42 -36 c71 -61 124 -81 224 -85 101 -5 141 4 209 48 109 69 129 229 39 323 -31 33 -112 76 -189 101 -70 23 -103 50 -103 86 0 33 15 48 58 56 44 9 94 -3 136 -31 20 -14 40 -25 44 -25 4 0 26 24 50 54 l42 55 -30 21 c-80 57 -225 85 -307 59z"/>
+                                <path class="spoon-text-path" d="M1867 2816 c-27 -7 -53 -18 -60 -25 -16 -16 -37 -14 -37 4 0 12 -14 15 -70 15 l-70 0 2 -377 3 -378 73 -3 72 -3 1 101 c1 55 3 105 4 110 1 6 3 12 4 15 0 3 20 -4 43 -16 29 -15 61 -22 103 -22 233 -2 365 268 230 471 -60 91 -190 138 -298 108z m100 -141 c66 -20 97 -64 97 -139 1 -95 -55 -156 -144 -156 -117 0 -183 116 -129 227 22 45 43 61 94 74 17 4 30 7 31 8 0 1 23 -6 51 -14z"/>
+                                <path class="spoon-text-path" d="M2501 2820 c-97 -21 -188 -107 -218 -209 -32 -111 11 -243 101 -312 60 -45 104 -59 192 -59 134 0 236 76 279 208 30 90 5 203 -60 280 -59 71 -193 112 -294 92z m141 -152 c28 -14 65 -70 72 -108 14 -83 -40 -169 -116 -184 -108 -22 -200 87 -169 201 24 87 131 133 213 91z"/>
+                                <path class="spoon-text-path" d="M3143 2815 c-104 -28 -175 -95 -209 -197 -49 -148 44 -327 192 -368 57 -16 180 -9 225 13 48 24 117 94 135 137 46 107 38 208 -22 297 -42 62 -95 98 -171 118 -68 18 -82 18 -150 0z m150 -152 c43 -22 67 -69 67 -134 0 -94 -57 -154 -146 -153 -135 2 -194 178 -92 272 47 43 107 48 171 15z"/>
+                                <path class="spoon-text-path" d="M3807 2786 c-44 -22 -47 -22 -47 -5 0 17 -8 19 -75 19 l-75 0 0 -280 0 -280 75 0 75 0 0 153 c0 83 5 169 10 189 28 100 166 129 215 45 16 -27 20 -57 23 -209 l4 -178 75 0 74 0 -3 208 c-3 199 -4 209 -27 247 -14 22 -33 48 -43 58 -61 60 -198 76 -281 33z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3 class="card-subheading">Spoon Radio</h3>
+                    <p class="card-text">Tune into my live audio streams, voice logs, and interactive music sessions.</p>
+                </a>
+            </div>
+        </section>
+
+
+    </main>
+</body>
+</html>
