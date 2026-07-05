@@ -1,7 +1,5 @@
 import pandas as pd
 
-
-
 def generate_song_html(row):
     song = row['Songs']
     artist = row['Artists']
