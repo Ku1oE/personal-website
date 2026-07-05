@@ -1,7 +1,7 @@
 import pandas as pd
 
-DATA_FILE = "songs.csv"
-TEMPLATE_FILE = "songs-template.html"
+DATA_FILE = "data/songs.csv"
+TEMPLATE_FILE = "templates/songs-template.html"
 OUTPUT_FILE = "songs.html"
 
 def generate_song_html(row):

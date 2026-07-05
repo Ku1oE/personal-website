@@ -19,7 +19,7 @@
 
 /* Full Bleed Image Backing Layer */
 .hero-bg {
-    background-image: url("photos/akiprofile.JPG");
+    background-image: url("../photos/akiprofile.JPG");
     position: absolute;
     top: 0;
     left: 0;
