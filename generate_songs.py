@@ -1,6 +1,6 @@
 import pandas as pd
 
-DATA_FILE = "data.csv"
+DATA_FILE = "songs.csv"
 TEMPLATE_FILE = "songs-template.html"
 OUTPUT_FILE = "songs.html"
 
