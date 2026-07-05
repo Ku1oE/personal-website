@@ -1,8 +1,12 @@
 import pandas as pd
 
-DATA_FILE = "data/songs.csv"
-TEMPLATE_FILE = "templates/songs-template.html"
-OUTPUT_FILE = "songs.html"
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).parent.parent
+
+DATA_FILE = PROJECT_ROOT / "data" / "songs.csv"
+TEMPLATE_FILE = PROJECT_ROOT / "templates" / "songs-template.html"
+OUTPUT_FILE = PROJECT_ROOT / "songs.html"
 
 def generate_song_html(row):
     song = row['Songs']
@@ -10,9 +14,15 @@ def generate_song_html(row):
 
     tags = [tag.strip() for tag in row["Tags"].split(",")]
     tag_html = generate_tags(tags)
+    lowercase_tags = [tag.lower() for tag in tags]
+
 
     return f'''
-    <div class="song-item">
+    <div
+    class="song-item"
+    data-title="{song.lower()}"
+    data-artist="{artist.lower()}"
+    data-tags="{','.join(lowercase_tags)}">
         <div class="song-info">
             <h3 class="song-title">{song}</h3>
             <p class="song-artist">{artist}</p>
