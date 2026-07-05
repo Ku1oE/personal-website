@@ -1,9 +1,16 @@
 import pandas as pd
 
+DATA_FILE = "data.csv"
+TEMPLATE_FILE = "songs-template.html"
+OUTPUT_FILE = "songs.html"
+
 def generate_song_html(row):
     song = row['Songs']
     artist = row['Artists']
-    tag_html = generate_tags([tag.strip() for tag in row['Tags'].split(",")])
+
+    tags = [tag.strip() for tag in row["Tags"].split(",")]
+    tag_html = generate_tags(tags)
+
     return f'''
     <div class="song-item">
         <div class="song-info">
@@ -20,9 +27,19 @@ def generate_tags(tags):
 
 
 def main():
-    df = pd.read_csv('data.csv')
-    with open('songs-template.html', 'r', encoding='utf-8') as f:
-        template_content = f.read()
+    try:
+        df = pd.read_csv(DATA_FILE)
+    except FileNotFoundError:
+        print(f"Error: The file '{DATA_FILE}' was not found.")
+        return
+    
+    with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f:
+        try:
+            template_content = f.read()
+        except Exception as e:
+            print(f"Error reading template file: {e}")
+            return
+
     songs_html_list = []
     for _, row in df.iterrows():
         songs_html = generate_song_html(row)
@@ -30,9 +47,17 @@ def main():
 
     all_songs_combined = "\n".join(songs_html_list)
 
-    final_content = template_content.replace('{{songs}}', all_songs_combined)
+    final_content = template_content.replace('{{SONGS}}', all_songs_combined)
 
-    with open('output.html', 'w', encoding='utf-8') as f:
-        f.write(final_content)
+    try:
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.write(final_content)
+    except Exception as e:
+        print(f"Error writing to output file: {e}")
+        return
 
     print("success")
+
+
+if __name__ == "__main__":
+    main()
