@@ -80,6 +80,19 @@
     color: #757279;
 }
 
+.filter-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.search-input {
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #333333;
+}
+
 .search-icon {
     width: 60px;
     height: 60px;
