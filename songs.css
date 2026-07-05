@@ -80,12 +80,10 @@
     color: #757279;
 }
 
-.search-icon-left svg,
-.search-icon-right svg {
-    width: 20px;
-    height: 20px;
-    fill: #5a575e;
-    display: block;
+.search-icon {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
 }
 
 /* --- Clean List Architecture --- */
