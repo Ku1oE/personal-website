@@ -33,27 +33,25 @@ def main():
         print(f"Error: The file '{DATA_FILE}' was not found.")
         return
     
-    with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f:
-        try:
+    try:
+        with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f:
             template_content = f.read()
-        except Exception as e:
-            print(f"Error reading template file: {e}")
-            return
+    except FileNotFoundError:
+        print(f"Error: The file '{TEMPLATE_FILE}' was not found.")
+        return
 
-    songs_html_list = []
-    for _, row in df.iterrows():
-        songs_html = generate_song_html(row)
-        songs_html_list.append(songs_html)
-
-    all_songs_combined = "\n".join(songs_html_list)
+    all_songs_combined = "\n".join(
+        generate_song_html(row)
+        for _, row in df.iterrows()
+    )
 
     final_content = template_content.replace('{{SONGS}}', all_songs_combined)
 
     try:
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             f.write(final_content)
-    except Exception as e:
-        print(f"Error writing to output file: {e}")
+    except FileNotFoundError:
+        print(f"Error: The file '{OUTPUT_FILE}' was not found.")
         return
 
     print("success")
