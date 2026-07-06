@@ -16,9 +16,9 @@
             <h1><a class="logo" href="index.html">Aki's Living room</a></h1>
             <div class="nav-right">
                 <ul class="nav-list">
-                    <li><a href="#about-me">About me</a></li>
-                    <li><a href="#sns">SNS</a></li>
-                    <li><a href="#others">Others</a></li>
+                    <li><a href="index.html#about-me">About me</a></li>
+                    <li><a href="index.html#sns">SNS</a></li>
+                    <li><a href="index.html#others">Others</a></li>
                 </ul>
                 <a href="#" class="nav-btn">≡</a>
             </div>
@@ -34,15 +34,27 @@
                 <p class="hero-subtitle">カラオケでリクエストしたいかもって時にお使いください</p>
                 
                 <form class="search-box">
-                    <button class="filter-button" type="button">
-                        <img src="icons/filter-icon.png" alt="Filter Icon" class ="filter-icon">
-                    </button>
-                    <!-- TODO: Make it so that when we click the Filter Icon, it opens the filter options. It should be a modal window with things user can check one or more tags-->
+                    <!-- TODO: finish filter UI-->
+                    <div class="dropdown">
+                        <button id = "dropdown-button" type="button" onclick="toggleDropdown()">
+                            <img src="icons/filter-icon.png" alt="filter icon" id="filter-icon">
+                        </button>
+                        <div id="options" class="dropdown-content">
+                            <label><input type="checkbox" value="j-pop">J-POP</label> 
+                            <label><input type="checkbox" value="ボカロ">ボカロ</label>
+                            <label><input type="checkbox" value="洋楽">洋楽</label>
+                            <label><input type="checkbox" value="ディズニー">アニメ</label>
+                            <label><input type="checkbox" value="ディズニー">ディズニー</label>
+                            <label><input type="checkbox" value="日英以外">日英以外</label>
+                            <label><input type="checkbox" value="ミュージカル">ミュージカル</label>
+                        </div>
+                    </div>
+
                     <input type="text" placeholder="曲名やアーティスト名で検索" aria-label="Search songs" id="search-input">
-                    <button class="search-button" type="submit">
-                        <img src="icons/search-icon.png" alt="Search Icon" class="search-icon">
+                    <button id="close-button" type="button">
+                        <img src="icons/close-icon.png" alt="close icon" id="close-icon">
                     </button>
-                    <!-- TODO: Implement search functionality -->
+            </div>
                 </form>
             </div>
         </section>
@@ -4929,6 +4941,7 @@
             </div>
         </section>
     </main>
-
+<!-- <script src="scripts/close-button.js"></script> -->
+<script src="scripts/script.js"></script>
 </body>
 </html>

@@ -34,13 +34,13 @@
                 <p class="hero-subtitle">カラオケでリクエストしたいかもって時にお使いください</p>
                 
                 <form class="search-box">
-                    <button class="filter-button" type="button">
-                        <img src="icons/filter-icon.png" alt="Filter Icon" class ="filter-icon">
+                    <button id="filter-button" type="button">
+                        <img src="icons/filter-icon.png" alt="Filter Icon" id ="filter-icon">
                     </button>
                     <!-- TODO: Make it so that when we click the Filter Icon, it opens the filter options. It should be a modal window with things user can check one or more tags-->
                     <input type="text" placeholder="曲名やアーティスト名で検索" aria-label="Search songs" id="search-input">
-                    <button class="search-button" type="submit">
-                        <img src="icons/search-icon.png" alt="Search Icon" class="search-icon">
+                    <button id="close-button" type="button">
+                        <img src="icons/close-icon.png" alt="close icon" id="close-icon">
                     </button>
                     <!-- TODO: Implement search functionality -->
                 </form>
@@ -56,6 +56,7 @@
         </section>
     </main>
 
+<script src="scripts/close-button.js"></script>
 <script src="scripts/script.js"></script>
 </body>
 </html>
