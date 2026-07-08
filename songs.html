@@ -33,17 +33,16 @@
                 <h2 class="hero-title">Song lists</h2>
                 <p class="hero-subtitle">カラオケでリクエストしたいかもって時にお使いください</p>
                 
-                <form class="search-box">
-                    <!-- TODO: finish filter UI-->
+                <form class="search-box" id="search-form">
                     <div class="dropdown">
-                        <button id = "dropdown-button" type="button" onclick="toggleDropdown()">
+                        <button id = "dropdown-button" type="button">
                             <img src="icons/filter-icon.png" alt="filter icon" id="filter-icon">
                         </button>
                         <div id="options" class="dropdown-content">
                             <label><input type="checkbox" value="j-pop">J-POP</label> 
                             <label><input type="checkbox" value="ボカロ">ボカロ</label>
                             <label><input type="checkbox" value="洋楽">洋楽</label>
-                            <label><input type="checkbox" value="ディズニー">アニメ</label>
+                            <label><input type="checkbox" value="アニメ">アニメ</label>
                             <label><input type="checkbox" value="ディズニー">ディズニー</label>
                             <label><input type="checkbox" value="日英以外">日英以外</label>
                             <label><input type="checkbox" value="ミュージカル">ミュージカル</label>
@@ -60,6 +59,10 @@
         </section>
 
         <section class="songs-section">
+            <div class="songs-wrapper">
+                <div class="song-count">
+                    <span id="song-count"></span>
+                </div>
             <div class="songs-list">
 
                 
@@ -130,11 +133,11 @@
 
     <div
     class="song-item"
-    data-title="when we were young"
+    data-title="When we were young"
     data-artist="adele"
     data-tags="洋楽">
         <div class="song-info">
-            <h3 class="song-title">when we were young</h3>
+            <h3 class="song-title">When we were young</h3>
             <p class="song-artist">Adele</p>
             <div class="song-tags"><span class="tag">洋楽</span></div>
         </div>
@@ -4939,6 +4942,7 @@
     
                          
             </div>
+        </div>
         </section>
     </main>
 <!-- <script src="scripts/close-button.js"></script> -->

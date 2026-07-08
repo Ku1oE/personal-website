@@ -1,34 +1,75 @@
 const searchInput = document.getElementById("search-input");
 const songItems = document.querySelectorAll(".song-item");
 const closeButton = document.getElementById("close-button");
+const dropdownButton = document.getElementById("dropdown-button");
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const searchForm = document.getElementById("search-form");
 
 function toggleDropdown() {
     document.getElementById("options").classList.toggle("show");
 }
+console.log(searchForm);
+searchForm.addEventListener("submit", preventFormSubmit);
 
-// 3. Listen for typing
-searchInput.addEventListener("input", function () {
+function preventFormSubmit(event) {
+    console.log(event);
+    event.preventDefault();
+}
 
-    // 4. Read what the user typed
+
+function filterSongs(){
     const searchTerm = searchInput.value.toLowerCase();
+    const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const checkedValues = Array.from(checkedBoxes).map(checkbox => checkbox.value);
+    let visibleSongs = 0;
 
-    // 5. Loop through every song
     songItems.forEach(function (songItem) {
 
-        // 6. Get the song text
-        const songTitle = songItem.dataset.title;
-        const songArtist = songItem.dataset.artist;
+        // Get song title and artist
+        const songTitle = songItem.dataset.title.toLowerCase();
+        const songArtist = songItem.dataset.artist.toLowerCase();
+        const songTags = songItem.dataset.tags.split(",");
 
-        // 7. Compare
-        if (songTitle.includes(searchTerm) || songArtist.includes(searchTerm)) {
+        const matchesSearch = songTitle.includes(searchTerm) || songArtist.includes(searchTerm);
+        const matchesTags = songTags.some(item => checkedValues.includes(item)) || checkedValues.length == 0;
+
+        // Compare
+        if (matchesSearch && matchesTags) {
             songItem.style.display = "";
+            visibleSongs++;
         } else {
             songItem.style.display = "none";
         }
     });
+
+    // Shows Count of # of songs
+    if (visibleSongs == 1){
+        document.getElementById("song-count").textContent =
+        `${visibleSongs} Song found`;
+    } else if (visibleSongs == 0){
+        document.getElementById("song-count").textContent =
+        `No songs found`;
+    } else {
+        document.getElementById("song-count").textContent =
+        `${visibleSongs} Songs found`;
+    }
+}
+
+dropdownButton.addEventListener("click", toggleDropdown);
+
+// Listen Search input
+searchInput.addEventListener("input", function () {
+    filterSongs();
 });
 
+// Listen Checkbox input
+checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+        filterSongs();
+    });
+});
 
+//Listen Clear Button
 closeButton.addEventListener("click", function () {
     searchInput.value = "";
     searchInput.focus();
@@ -38,33 +79,16 @@ closeButton.addEventListener("click", function () {
 });
 
 
-//Following code for dropdown function.
-window.addEventListener("click", function(event) {
+
+
+//Listen for any click
+window.addEventListener("click", function(event) { 
+    //creates event for a click
     const dropdown = document.querySelector(".dropdown");
 
-    if (!dropdown.contains(event.target)) {
+    //If the click was outside the dropdown, dropdown menu disappears
+    if (!dropdown.contains(event.target)) { 
         document.getElementById("options").classList.remove("show");
     }
 });
 
-
-document.querySelectorAll('.dropdown-content input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        const text = this.value;
-        const selectedItems = document.querySelector('.selected-items');
-        const existingItem = selectedItems.querySelector(`[data-value="${text}"]`);
-
-        if (this.checked) {
-            if (!existingItem) {
-                const selectedItem = document.createElement('div');
-                selectedItem.setAttribute('data-value', text);
-                selectedItem.innerText = text;
-                selectedItems.appendChild(selectedItem);
-            }
-        } else {
-            if (existingItem) {
-                existingItem.remove();
-            }
-        }
-    });
-});
