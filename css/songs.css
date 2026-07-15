@@ -89,10 +89,11 @@
 }
 
 #filter-icon {
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 18px;
+    height: 16px;
+    margin-left: 8px;
+    margin-right: 11px;
+    margin-top: 6px;
     border: none;
 }
 
@@ -106,17 +107,17 @@
 }
 
 .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #e3dfe8;
-            min-width: 300px;
-            overflow-y: auto;
-            max-height: 100px;
-            border: none;
-            border-radius: 10px;
-            z-index: 50;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+    display: none;
+    position: absolute;
+    background-color: #e3dfe8;
+    min-width: 300px;
+    overflow-y: auto;
+    max-height: 100px;
+    border: none;
+    border-radius: 10px;
+    z-index: 50;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
 .dropdown-content label {
     display: flex;
@@ -177,6 +178,7 @@ form > button {
     width: 20px;
     height: 20px;
     border: none;
+    margin-top: 3px;
     margin-right: 5px;
 }
 
